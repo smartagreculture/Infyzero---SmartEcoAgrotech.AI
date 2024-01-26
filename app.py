@@ -30,7 +30,7 @@ def crop_recommendation():
     except Exception as e:
         return jsonify({'Error': str(e)}), 500
 
-app.run(host='0.0.0.0', port=81)
+app.run()
 
 # {
 #     "N": 31,
