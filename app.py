@@ -5,10 +5,15 @@ import numpy as np
 
 app = Flask(__name__)
 
-with open(r"2_Crop_Recomendation/crop_recommendation_rf_model.pkl", "rb") as input_file:
+with open(r"crop_recommendation_rf_model.pkl", "rb") as input_file:
     model = pickle.load(input_file)
-with open(r"2_Crop_Recomendation/crop_recommendation_label_encoder.pkl", "rb") as input_file:
+
+with open(r"crop_recommendation_label_encoder.pkl", "rb") as input_file:
     label_encoder = pickle.load(input_file)
+
+@app.route("/")
+def hello():
+  return "Hello World!"
 
 @app.route('/crop-recommendation', methods = ['POST'])
 def crop_recommendation():
