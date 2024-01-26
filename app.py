@@ -30,8 +30,7 @@ def crop_recommendation():
     except Exception as e:
         return jsonify({'Error': str(e)}), 500
 
-if __name__ == '__main__':
-    app.run(debug = True)
+app.run(debug = True)
 
 # {
 #     "N": 31,
