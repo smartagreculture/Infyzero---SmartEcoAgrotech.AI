@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 import numpy as np
 
-app = Flask()
+app = Flask(__name__) 
 
 with open(r"crop_recommendation_rf_model.pkl", "rb") as input_file:
     model = pickle.load(input_file)
